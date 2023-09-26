@@ -1,0 +1,33 @@
+# syntax=v1
+
+
+def dependencies(gpu=False):
+    install.python()
+    if gpu:
+        install.cuda(version="11.6.2")
+        install.python_packages(
+            name=["torch"]
+        )
+    else:
+        install.python_packages(
+            name=["torch --index-url https://download.pytorch.org/whl/cpu"]
+        )
+    install.python_packages(
+        name=[
+            "transformers",
+            "numpy",
+            "llmspec",
+            "mosec",
+        ]
+    )
+
+
+def build():
+    base(dev=True)
+    install.conda()
+    dependencies()
+
+
+def serving():
+    base(dev=False)
+    dependencies()
