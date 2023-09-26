@@ -18,6 +18,23 @@ envd up
 
 ## Images
 
+You can use the prebuilt image from DockerHub: [kemingy/mosec-emb-cpu](https://hub.docker.com/r/kemingy/mosec-emb-cpu).
+
 ```bash
+docker run --rm -p 8000:8000 kemingy/mosec-emb-cpu:latest
+```
+
+Or build your own image:
+
+```bash
+# docker
+docker build .
+# envd
 envd build :serving
+```
+
+## Test
+
+```bash
+python client.py
 ```

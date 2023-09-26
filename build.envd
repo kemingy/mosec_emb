@@ -31,3 +31,5 @@ def build():
 def serving():
     base(dev=False)
     dependencies()
+    io.copy("main.py", "/root/main.py")
+    config.entrypoint(["python", "/root/main.py"])
