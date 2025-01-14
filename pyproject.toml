@@ -19,7 +19,6 @@ dependencies = [
 [project.optional-dependencies]
 dev = [
     "ruff",
-    "black",
 ]
 [project.urls]
 "Homepage" = "https://github.com/kemingy/mosec_emb"
@@ -36,10 +35,7 @@ write_to = "__version__.py"
 [tool.ruff]
 target-version = "py38"
 line-length = 88
+[tool.pylint]
 select = ["E", "F", "B", "I", "SIM", "TID", "PL"]
-[tool.ruff.pylint]
 max-branches = 35
 max-statements = 100
-
-[tool.black]
-line-length = 88
