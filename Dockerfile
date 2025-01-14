@@ -36,6 +36,7 @@ RUN set -x && \
     /opt/conda/bin/conda clean -afy
 
 ENV PYTHON_PREFIX=/opt/conda/bin
+ENV PATH="$PATH:/opt/conda/bin"
 
 RUN update-alternatives --install /usr/bin/python python ${PYTHON_PREFIX}/python 1 && \
     update-alternatives --install /usr/bin/python3 python3 ${PYTHON_PREFIX}/python3 1 && \
@@ -47,5 +48,4 @@ RUN pip install mosec llmspec transformers numpy
 RUN mkdir -p /workspace
 WORKDIR /workspace
 COPY main.py /workspace/main.py
-
-ENTRYPOINT [ "python", "main.py" ]
+CMD [ "python", "main.py" ]
