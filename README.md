@@ -21,7 +21,7 @@ envd up
 You can use the prebuilt image from `ghcr`: [kemingy/mosec_emb](https://github.com/kemingy/mosec_emb/pkgs/container/mosec_emb).
 
 ```bash
-docker run --rm -p 8000:8000 docker pull ghcr.io/kemingy/mosec_emb:latest
+docker run --rm -p 8000:8000 ghcr.io/kemingy/mosec_emb:latest
 ```
 
 Or build your own image:
